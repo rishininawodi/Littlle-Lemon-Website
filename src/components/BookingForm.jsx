@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import React, { useReducer } from 'react';
+import BookingForm from './BookingForm';
 
-const BookingForm = () => {
+const BookingForm = ({ availableTimes, dispatch }) => {
   // State variables for form fields
   const [date, setDate] = useState('');
   const [time, setTime] = useState('');
@@ -20,6 +22,11 @@ const BookingForm = () => {
     // setTime('');
     // setGuests(1);
     // setOccasion('Birthday');
+    const handleDateChange = (event) => {
+        const selectedDate = event.target.value;
+        // Dispatch action to update availableTimes based on selectedDate
+        dispatch({ type: 'UPDATE_TIMES', selectedDate });
+      };
   };
 
   return (
