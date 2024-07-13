@@ -1,0 +1,27 @@
+/* Flexbox for desktop and tablet */
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #f0f0f0;
+  }
+  
+  /* Flexbox for mobile */
+  @media(max-width: 767px) {
+    .container {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }
+  
+  .item {
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+    flex: 1;
+  }
+  
