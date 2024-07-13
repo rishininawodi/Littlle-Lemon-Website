@@ -24,4 +24,87 @@
     text-align: center;
     flex: 1;
   }
+  /* General styles */
+body {
+    font-family: 'Arial, sans-serif';
+    color: #333;
+    margin: 0;
+    padding: 0;
+    background-color: #FFF;
+  }
+  
+  /* Headings */
+  h1, h2, h3, h4, h5, h6 {
+    color: #4CAF50;
+    margin: 10px 0;
+  }
+  
+  h1 {
+    font-size: 2.5em;
+  }
+  
+  h2 {
+    font-size: 2em;
+  }
+  
+  h3 {
+    font-size: 1.75em;
+  }
+  
+  h4 {
+    font-size: 1.5em;
+  }
+  
+  h5 {
+    font-size: 1.25em;
+  }
+  
+  h6 {
+    font-size: 1em;
+  }
+  
+  /* Paragraphs and spans */
+  p {
+    font-size: 1em;
+    line-height: 1.6;
+    margin: 10px 0;
+  }
+  
+  span {
+    color: #757575;
+  }
+  /* Navigation */
+nav {
+    background-color: #4CAF50;
+    padding: 15px;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  nav ul li {
+    margin: 0 10px;
+  }
+  
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+  }
+  
+  nav ul li a:hover {
+    color: #FFEB3B;
+  }
+  /* Images */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
   
