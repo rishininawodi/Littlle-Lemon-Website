@@ -4,6 +4,16 @@ import BookingForm from './BookingForm';
 
 const BookingForm = ({ availableTimes, dispatch }) => {
   // State variables for form fields
+  const [formData, setFormData] = useState({
+    date: '',
+    time: '',
+    numberOfPeople: 1,
+    name: '',
+    email: ''
+  });
+  const [isFormValid, setIsFormValid] = useState(false);
+
+
   const [date, setDate] = useState('');
   const [time, setTime] = useState('');
   const [guests, setGuests] = useState(1); // Default to 1 guest
@@ -27,12 +37,22 @@ const BookingForm = ({ availableTimes, dispatch }) => {
     const times = await fetchAPI(formatDate(selectedDate));
     return times;
   }
+
+  useEffect(() => {
+    const isFormValid = formData.date &&
+                        formData.time &&
+                        formData.numberOfPeople > 0 &&
+                        formData.name &&
+                        /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email); // Simple email regex for validation
+    setIsFormValid(isFormValid);
+  }, [formData]);
+
   
 
 
   // Event handler for form submission
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  const handleSubmit = (e) => {
+    e.preventDefault();
     // Logic to submit form data or handle it as needed
     console.log('Form submitted:', { date, time, guests, occasion });
     // Reset form fields after submission (if needed)
