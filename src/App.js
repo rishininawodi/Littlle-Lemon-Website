@@ -7,6 +7,7 @@ import Main from './Main';
 import Footer from './Footer';
 import HomePage from './HomePage';
 import BookingPage from './BookingPage';
+import ConfirmedBooking from './ConfirmedBooking';
 import './styles.css';
 
 function App() {
@@ -17,6 +18,8 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/booking" element={<BookingPage />} />
+          <Route path="/" element={<BookingForm />} />
+        <Route path="/confirmation" element={<ConfirmedBooking />} />
         </Routes>
       </div>
     </Router>
