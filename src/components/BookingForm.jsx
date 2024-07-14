@@ -12,6 +12,24 @@ const BookingForm = ({ availableTimes, dispatch }) => {
   // Array of available times (could be fetched from API in real scenario)
   const availableTimes = ['17:00', '18:00', '19:00', '20:00', '21:00', '22:00'];
 
+  const formatDate = (date) => {
+    // Format date as required by fetchAPI
+    return date.toISOString().split('T')[0];
+  }
+
+  const initializeTimes = async () => {
+    const today = new Date();
+    const times = await fetchAPI(formatDate(today));
+    return times;
+  }
+
+  const updateTimes = async (selectedDate) => {
+    const times = await fetchAPI(formatDate(selectedDate));
+    return times;
+  }
+  
+
+
   // Event handler for form submission
   const handleSubmit = (event) => {
     event.preventDefault();
